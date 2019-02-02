@@ -18,10 +18,9 @@ public class DemoApplication implements CommandLineRunner {
 
 	@Autowired
 	private CourseRepository courseRepository;
-	
+
 	@Autowired
 	private StudentRepository studentRepository;
-
 
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
@@ -32,8 +31,9 @@ public class DemoApplication implements CommandLineRunner {
 		Course course = courseRepository.findById(10001L);
 		courseRepository.save(course);
 		log.info("Executing course--->", course);
-		
+
 		studentRepository.saveStudentWithPassport();
+		courseRepository.addReviewsCourse();
 
 	}
 
