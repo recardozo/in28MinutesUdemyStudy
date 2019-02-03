@@ -8,6 +8,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
 import org.hibernate.annotations.CreationTimestamp;
@@ -32,6 +33,9 @@ public class Course {
 	// mappedBy means reviews is the owning side of the relationship
 	@OneToMany(mappedBy = "course")
 	private List<Review> reviews = new ArrayList<>();
+
+	@ManyToMany(mappedBy = "courses")
+	private List<Student> students = new ArrayList<>();
 
 	protected Course() {
 	}
@@ -58,6 +62,14 @@ public class Course {
 
 	public void removeReview(Review review) {
 		this.reviews.remove(review);
+	}
+
+	public List<Student> getStudents() {
+		return students;
+	}
+
+	public void addStudents(Student student) {
+		this.students.add(student);
 	}
 
 	public Long getId() {

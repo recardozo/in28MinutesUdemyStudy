@@ -27,4 +27,16 @@ values(50002,'3','Three Stars Course',10001L);
 insert into review(id,rating,description,course_id)
 values(50003,'1','One Star Course',10003L);
 
+insert into student_course(student_id,course_id)
+values(20001,10001);
+insert into student_course(student_id,course_id)
+values(20002,10001);
+insert into student_course(student_id,course_id)
+values(20003,10001);
+insert into student_course(student_id,course_id)
+values(20001,10003);
+
+
+
+
 

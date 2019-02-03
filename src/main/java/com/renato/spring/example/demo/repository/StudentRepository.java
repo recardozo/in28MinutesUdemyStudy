@@ -6,6 +6,7 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.renato.spring.example.demo.entity.Course;
 import com.renato.spring.example.demo.entity.Passport;
 import com.renato.spring.example.demo.entity.Student;
 
@@ -37,11 +38,22 @@ public class StudentRepository {
 	}
 
 	public void saveStudentWithPassport() {
-		Passport passport= new Passport("ac45642");
+		Passport passport = new Passport("ac45642");
 		em.persist(passport);
 		Student student = new Student("Joseph");
 		student.setPassport(passport);
 		em.persist(student);
+	}
+
+	public void insertStudentAndCourse(Student student, Course course) {
+		// Student student = new Student("Renato");
+		// Course course = new Course("Curso do Renato ");
+
+		student.addCourses(course);
+		course.addStudents(student);
+		em.persist(student);
+		em.persist(course);
+
 	}
 
 }

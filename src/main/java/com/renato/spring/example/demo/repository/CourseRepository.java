@@ -1,5 +1,7 @@
 package com.renato.spring.example.demo.repository;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.transaction.Transactional;
 
@@ -50,23 +52,17 @@ public class CourseRepository {
 
 	}
 
-	public void addReviewsCourse() {
+	public void addReviewsCourse(Long courseId, List<Review> reviews) {
 		// get the course 10003L
-		Course course = findById(10003L);
+		Course course = findById(courseId);
 		log.info("course.getReviews -->", course.getReviews());
 
-		// add 2 reviews
-		Review review1 = new Review("Greatfull course", "5");
-		review1.setCourse(course);
-		Review review2 = new Review("Wonderfull course", "4");
-		review2.setCourse(course);
+		for (Review review : reviews) {
+			course.addReview(review);
+			review.setCourse(course);
+			em.persist(review);
+		}
 
-		course.addReview(review1);
-		course.addReview(review2);
-
-		// save to databse
-		em.persist(review1);
-		em.persist(review2);
 	}
 
 }
