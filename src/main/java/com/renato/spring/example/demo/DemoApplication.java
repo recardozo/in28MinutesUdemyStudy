@@ -38,12 +38,12 @@ public class DemoApplication implements CommandLineRunner {
 		log.info("Executing course--->", course);
 
 		studentRepository.saveStudentWithPassport();
-		// List<Review> reviews = new ArrayList<>();
-		// reviews.add(new Review("Gratefull course", "5"));
-		// reviews.add(new Review("It could be better", "3"));
-		// courseRepository.addReviewsCourse(10003L, reviews);
+		List<Review> reviews = new ArrayList<>();
+		reviews.add(new Review("Gratefull course", "5"));
+		reviews.add(new Review("It could be better", "3"));
+		courseRepository.addReviewsCourse(10003L, reviews);
 
-		studentRepository.insertStudentAndCourse(new Student("Jack"), new Course("Curso do Jack"));
+		studentRepository.insertStudentAndCourse(new Student("Jack"), new Course("Jack's Course"));
 
 	}
 
