@@ -6,6 +6,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
+import com.renato.spring.example.demo.entity.Student;
+
 @Entity
 public class Passport {
 
