@@ -40,26 +40,26 @@ public class DemoApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		// Course course = courseRepository.findById(10001L);
-		// courseRepository.save(course);
-		// log.info("Executing course--->", course);
-		//
-		// studentRepository.saveStudentWithPassport();
-		// List<Review> reviews = new ArrayList<>();
-		// reviews.add(new Review("Gratefull course", "5"));
-		// reviews.add(new Review("It could be better", "3"));
-		// courseRepository.addReviewsCourse(10003L, reviews);
-		//
-		// studentRepository.insertStudentAndCourse(new Student("Jack"), new
-		// Course("Jack's Course"));
-		//
-		// employeeRepository.insert(new PartTimeEmployee("John", new
-		// BigDecimal("50")));
-		// employeeRepository.insert(new FullTimeEmployee("David", new
-		// BigDecimal("1000")));
-		//
-		// log.info("list the employees---->",
-		// employeeRepository.retriveAllEmployees());
+		 Course course = courseRepository.findById(10001L);
+		 courseRepository.save(course);
+		 log.info("Executing course--->", course);
+		
+		 studentRepository.saveStudentWithPassport();
+		 List<Review> reviews = new ArrayList<>();
+		 reviews.add(new Review("Gratefull course", "5"));
+		 reviews.add(new Review("It could be better", "3"));
+		 courseRepository.addReviewsCourse(10003L, reviews);
+		
+		 studentRepository.insertStudentAndCourse(new Student("Jack"), new
+		 Course("Jack's Course"));
+		
+		 employeeRepository.insert(new PartTimeEmployee("John", new
+		 BigDecimal("50")));
+		 employeeRepository.insert(new FullTimeEmployee("David", new
+		 BigDecimal("1000")));
+		
+		 log.info("list the employees---->",
+		 employeeRepository.retriveAllEmployees());
 
 	}
 
