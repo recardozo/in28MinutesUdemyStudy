@@ -15,6 +15,7 @@ import com.renato.spring.example.demo.entity.Course;
 import com.renato.spring.example.demo.entity.FullTimeEmployee;
 import com.renato.spring.example.demo.entity.PartTimeEmployee;
 import com.renato.spring.example.demo.entity.Review;
+import com.renato.spring.example.demo.entity.ReviewRating;
 import com.renato.spring.example.demo.entity.Student;
 import com.renato.spring.example.demo.repository.CourseRepository;
 import com.renato.spring.example.demo.repository.EmployeeRepository;
@@ -46,8 +47,8 @@ public class DemoApplication implements CommandLineRunner {
 		
 		 studentRepository.saveStudentWithPassport();
 		 List<Review> reviews = new ArrayList<>();
-		 reviews.add(new Review("Gratefull course", "5"));
-		 reviews.add(new Review("It could be better", "3"));
+		 reviews.add(new Review("Gratefull course", ReviewRating.FIVE));
+		 reviews.add(new Review("It could be better", ReviewRating.THREE));
 		 courseRepository.addReviewsCourse(10003L, reviews);
 		
 		 studentRepository.insertStudentAndCourse(new Student("Jack"), new
